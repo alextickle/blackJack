@@ -23,10 +23,6 @@ $(document).ready(function(){
   });
 });
 
-var printL = function(){
-  console.log("lllll");
-}
-
 var Cards = [];
 
 // Card object constructor
@@ -130,12 +126,12 @@ var getHandValue = function(hand){
 var displayHand = function(hand){
   if (hand === playerHand){
     for (var i = 0; i < hand.length; i++){
-  		$("#p" + i).attr("src", "../cards/" + hand[i].filename);
+  		$("#p" + i).attr("src", "cards/" + hand[i].filename);
   	}
   }
   else {
     for (var i = 0; i < hand.length; i++){
-  		$("#d" + i).attr("src", "../cards/" + hand[i].filename);
+  		$("#d" + i).attr("src", "cards/" + hand[i].filename);
   	}
   }
 };
@@ -188,7 +184,7 @@ var playGame = function(){
   dealerHand[dealerHand.length] = drawCard();
   displayHand(playerHand);
   displayHand(dealerHand);
-  $("#d1").attr("src", "../cards/card-back.jpg");
+  $("#d1").attr("src", "cards/card-back.jpg");
 
   // if player did not get 21 on initial deal then ask to hit or stay
   if (getHandValue(playerHand) < 21){
